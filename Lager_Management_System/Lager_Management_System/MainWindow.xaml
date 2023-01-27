@@ -1,0 +1,99 @@
+﻿<Window x:Class="Lager_Management_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lager_Management_System"
+        mc:Ignorable="d"
+        Title="Lager-Managment-System" Height="500" Width="1210">
+    <Grid Margin="0,0,0,5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <!--DataGrid-->
+        <DataGrid Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="5" Margin="201,5,5,10" Grid.RowSpan="5" SelectionChanged="DataGrid_SelectionChanged_1"/>
+
+
+        <!--Textboxen-->
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="0,3,0,0" TextWrapping="Wrap" Name="TXT_Bezeichnung" VerticalAlignment="Top" Width="190" Height="27"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="0,35,0,0" TextWrapping="Wrap" Name="TXT_Hersteller" VerticalAlignment="Top" Width="190" Height="24"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,29" TextWrapping="Wrap" Name="TXT_Modell"  VerticalAlignment="Bottom" Width="190" Height="26" Grid.Row="1"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="0,39,0,0" TextWrapping="Wrap" Name="TXT_Typ" VerticalAlignment="Top" Width="190" Height="27" Grid.Row="1" RenderTransformOrigin="0.504,0.631" Grid.RowSpan="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="0,13,0,0" TextWrapping="Wrap" Name="TXT_BaujahrVon" VerticalAlignment="Top" Width="60" Height="27" Grid.Row="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="131,14,0,0" TextWrapping="Wrap" Name="TXT_BaujahrBis" VerticalAlignment="Top" Width="60" Height="27" Grid.Row="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="0,49,0,0" TextWrapping="Wrap" Name="TXT_Hubraum" VerticalAlignment="Top" Width="60" Height="27" Grid.Row="2" Grid.RowSpan="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="0,21,0,0" TextWrapping="Wrap" Name="TXT_PS" VerticalAlignment="Top" Width="190" Height="27" Grid.Row="3"/>
+
+
+        <!--ComboBox -->
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="0,53,0,0" Grid.Row="3" VerticalAlignment="Top" Width="191" Grid.RowSpan="2" Name="Combo_Kraftstoff" Height="24">
+            <ComboBoxItem Content="Benzin"></ComboBoxItem>
+            <ComboBoxItem Content="Diesel"></ComboBoxItem>
+            <ComboBoxItem Content="Gas"></ComboBoxItem>
+        </ComboBox>
+
+
+
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="191" Name="Combo_Kategorie" Margin="0,27,0,0">
+            <ComboBoxItem Content="Motor"></ComboBoxItem>
+            <ComboBoxItem Content="Karosserie"></ComboBoxItem>
+            <ComboBoxItem Content="Elektrik"></ComboBoxItem>
+
+        </ComboBox>
+
+
+
+        <!--Label-->
+        <Label Content="Ersatzteil Bezeichnung" HorizontalAlignment="Left" Margin="47,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,-0.307" Width="145"/>
+        <Label Content="" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" Height="33" Grid.RowSpan="2"/>
+        <Label Content="Fahrzeughersteller" HorizontalAlignment="Left" Margin="46,36,0,0" VerticalAlignment="Top" Height="24" Width="146"/>
+        <Label Content="Fahrezugmodell" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.531,0.906" Margin="46,5,0,0" Height="32" Width="101"/>
+        <Label Content="Fahrzeugtyp&#xD;&#xA;" HorizontalAlignment="Left" Margin="47,42,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Grid.RowSpan="2" Width="97" RenderTransformOrigin="0.525,-0.707"/>
+        <Label Content="Baujahr&#xD;&#xA;" HorizontalAlignment="Left" Margin="46,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="31" Width="151"/>
+        <Label Grid.Column="1" Content="bis" HorizontalAlignment="Left" Margin="65,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="31" Width="61"/>
+        <Label Content="Hubraum" HorizontalAlignment="Left" Margin="46,49,0,0" Grid.Row="2" VerticalAlignment="Top" Height="27" Grid.RowSpan="2" Width="139"/>
+        <Label Grid.Column="1" Content="cm³" HorizontalAlignment="Left" Margin="65,51,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Grid.RowSpan="2" Width="126"/>
+        <Label Content="PS" HorizontalAlignment="Left" Margin="46,23,0,0" Grid.Row="3" VerticalAlignment="Top" Width="139" Height="25"/>
+        <Label Content="Kraftstoffart" HorizontalAlignment="Left" Margin="46,50,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.RowSpan="2" Height="27" Width="145"/>
+        <Label Content="Kategorie" Margin="46,23,17,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.579,0.481"/>
+
+
+
+        <!--Buttons-->
+        <Button Grid.Column="1" Content="Suchen" HorizontalAlignment="Left" Margin="201,0,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="90"/>
+
+        <Button Grid.Column="2" Content="Hinzufügen" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Height="30" Width="90" Grid.ColumnSpan="2" Margin="157,0,0,0"/>
+
+        <Button Grid.Column="3" Content="Ändern" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Height="30" Width="90" Grid.ColumnSpan="2" Margin="112,0,0,0"/>
+
+        <Button Grid.Column="4" Content="Löschen" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Height="30" Width="90"/>
+
+        <Button Grid.Column="4" Content="Schließen" HorizontalAlignment="Left" Margin="201,0,0,0" Grid.Row="5" VerticalAlignment="Top" Height="30" Width="90" Grid.ColumnSpan="2"/>
+
+
+        <Button Content="?" HorizontalAlignment="Left" Margin="47,10,0,0" Grid.Row="5" VerticalAlignment="Top" Height="30" Width="49"/>
+
+
+
+
+
+    </Grid>
+</Window>
